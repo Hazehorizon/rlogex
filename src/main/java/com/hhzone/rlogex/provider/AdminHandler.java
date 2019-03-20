@@ -84,8 +84,8 @@ public class AdminHandler extends AbstractHttpHandler {
                     .computeIfAbsent(j.getJsonArray("keys").getString(1), k -> new TreeMap<>())
                         .put(j.getJsonArray("keys").getString(2), j.getLong("value")));
 
-        return new JsonObject(byKeys.entrySet().stream().collect(toMap(Map.Entry::getKey, e0 -> new JsonObject(
-            e0.getValue().entrySet().stream().collect(toMap(Map.Entry::getKey, e1 -> new JsonObject((Map)e1.getValue()), throwingMerger(), TreeMap::new))), throwingMerger(), TreeMap::new)));
+        return new JsonObject((Map)byKeys.entrySet().stream().collect(toMap(Map.Entry::getKey, e0 -> new JsonObject(
+            (Map)e0.getValue().entrySet().stream().collect(toMap(Map.Entry::getKey, e1 -> new JsonObject((Map)e1.getValue()), throwingMerger(), TreeMap::new))), throwingMerger(), TreeMap::new)));
     }
 
     private Handler<AsyncResult<Message<JsonObject>>> reroutHandler(RoutingContext context) {
