@@ -1,0 +1,16 @@
+{
+    "provider.http.port" : 8082, 
+    "logs.before.days" : -2,
+    "logs.reload.period" : "PT1M",
+    "logs.lines.group.size" : 700,
+    "logs.nodes" : ["node101","node102", "node103","node104", "node105","node106", "node107","node108", "node109","node110", "node111","node112", "node113","node114", "node115","node116"],
+    "logs.access.fileName" : "C:\\Dev\\issues\\test1\\{0}\\access.{1,date,yyyy-MM-dd}.log.gz",
+    "logs.access.linePattern" : "^\"(?<sessionId>[^;]+);\\s+([^;]+);\\s+(?<requestId>[^\"]+)\"[^\\[]*\\[(?<endTime>[^\\]]+)\\]\\s+\"(?<method>\\w+)\\s+(?<url>\\S+)[^\"]+\"\\s+(?<code>\\d+)\\s+(?<responseSize>[\\d-]+)\\s+\"(?<client>[^\"]+)\"\\s+(?<time>\\d+)$",
+    "logs.access.timestampFormat" : "dd/MMM/yyyy:HH:mm:ss ZZZZ",
+    "logs.server.fileName" : "C:\\Dev\\issues\\test1\\{0}\\server.log.{1,date,yyyy-MM-dd}.gz",
+    "logs.server.linePattern" : "^([^,]+)\\s+(?<timestamp>[0-9-]+\\s[0-9:,]+)\\s+(?<level>\\w+)\\s+(?<requestId>\\w*)\\s+(?<customerNo>\\d*).*$",
+    "logs.server.timestampFormat" : "yyyy-MM-dd HH:mm:ss,SSS",
+    "logs.device.fileName" : "C:\\Dev\\issues\\test1\\{0}\\device.log.{1,date,yyyy-MM-dd}.gz",
+    "logs.device.linePattern" : "^(?<timestamp>[0-9-]+\\s[0-9:,]+)\\s+(?<sessionId>[\\w-]+)\\s+(?<level>\\S+).*$",
+    "logs.device.timestampFormat" : "yyyy-MM-dd HH:mm:ss,SSS"
+}
